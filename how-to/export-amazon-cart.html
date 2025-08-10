@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html class="font-[Inter]" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>How to Export Amazon Cart</title>
+    <link
+      rel="canonical"
+      href="https://sharecarts.com/how-to/export-amazon-cart.html"
+    />
+    <meta
+      name="description"
+      content="Learn how to export your shopping cart on Amazon! Open a spreadsheet with all your Amazon cart items."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-M2TZ6RBVLX"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-M2TZ6RBVLX");
+    </script>
+    <style>
+      #wm-back-to-top {
+        z-index: 999;
+        position: fixed;
+        display: flex;
+        bottom: 0;
+        right: 0;
+        min-width: 20px;
+        min-height: 20px;
+        flex-direction: row;
+        gap: 8px;
+        align-items: center;
+        justify-content: center;
+        box-sizing: content-box;
+        margin: 8px;
+        padding: 8px;
+        cursor: pointer;
+        opacity: 0;
+        overflow: hidden;
+        transform: translateY(0px) scale(1);
+        background: transparent;
+        border-radius: 50px;
+        border-width: 0px;
+        border-color: #000000;
+        border-style: solid;
+        visibility: hidden;
+        transition: opacity 0.3s ease, transform 0.3s ease,
+          visibility 0s ease 0.3s;
+        will-change: transform;
+        backdrop-filter: blur(0px);
+
+        &.show {
+          transform: translateY(0px);
+          opacity: 1;
+          visibility: visible;
+          transition: opacity 0.3s ease, transform 0.3s ease,
+            visibility 0s ease 0s;
+        }
+        .icon {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          line-height: 0;
+          height: auto;
+          width: auto;
+        }
+        .text {
+          position: relative;
+          margin: 0;
+          font-size: 0.8rem;
+          font-weight: 500;
+          color: #000000;
+          text-transform: uppercase;
+        }
+        svg {
+          width: 15px;
+          height: 15px;
+        }
+        path {
+          stroke-width: 10px;
+          stroke: #ffffff;
+        }
+        .btt-background {
+          box-sizing: border-box;
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          background-color: #000000;
+          opacity: 1;
+          transition: opacity 0.3s ease;
+        }
+
+        &:hover {
+          transform: translateY(-3px);
+          opacity: 0.85;
+        }
+        &:active {
+          transform: translateY(-3px) scale(0.95);
+        }
+      }
+    </style>
+  </head>
+  <body class="h-full w-full max-w-3xl mx-auto">
+    <div class="min-h-[97vh] py-4 px-3">
+      <header class="flex justify-between">
+        <div class="flex gap-2">
+          <a class="hover:opacity-80" href="/">
+            <img
+              src="../images/logo.png"
+              width="60px"
+              height="60px"
+              alt="Share Carts"
+            />
+          </a>
+          <div class="mt-3">
+            <a
+              class="text-lg font-semibold tracking-tight hover:opacity-80 leading-3"
+              href="/"
+              >Share Carts</a
+            >
+            <span class="text-xs block leading-3"
+              >Share links to your shopping cart
+            </span>
+          </div>
+        </div>
+        <div class="mt-3">
+          <a
+            class="inline-flex h-10 items-center justify-center rounded-xl bg-gradient-to-r from-green-400 to-blue-500 px-4 sm:px-6 text-xs sm:text-sm font-medium text-white shadow transition-colors hover:from-green-500 hover:to-blue-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950"
+            href="/create.html"
+            ><img
+              alt="Chrome Extension"
+              loading="lazy"
+              width="24"
+              height="24"
+              class="mr-2 hidden sm:block"
+              src="/images/chrome.svg"
+            />Share Cart</a
+          >
+        </div>
+      </header>
+      <div class="my-5 border-t"></div>
+      <!-- MAIN CONTENT HERE -->
+      <main>
+        <article
+          class="prose prose-headings:tracking-tight mx-auto prose-sm sm:prose-base prose-stone prose-headings:font-semibold prose-h1:mt-10 prose-headings:text-center prose-a:text-blue-600 hover:prose-a:text-stone-800"
+        >
+          <p class="space-x-1 text-sm text-stone-400">
+            <a class="no-underline" href="/">← Home</a>
+            <span>//</span>
+            <span
+              >Last Updated
+              <time datetime="2025-04-15">April 15th, 2025</time></span
+            >
+          </p>
+          <h1>How to Export Amazon Cart</h1>
+          <p>
+            Exporting your Amazon cart can be useful in many different ways. For
+            starters, it makes sharing your shopping list much easier. Instead
+            of sending people a bunch of links or screenshots, you can just send
+            them a <em>clean, organized file</em> that shows everything in your
+            cart. This is great when you're planning a group purchase, buying
+            gifts for someone, or working on a team project where others need to
+            see or approve what you’re getting.
+          </p>
+          <p>
+            One of the best ways is by using a free browser tool like the
+            <a
+              href="https://chromewebstore.google.com/detail/bkcdmpcbhmafdmpekienmgfopacinonn"
+              target="_blank"
+              >Share Amazon Cart Extension ↗</a
+            >.
+            <strong
+              >It helps you organize, share, and export your cart in just a few
+              clicks</strong
+            >. In this article, we’ll explain why someone might want to export
+            their Amazon cart and how this tool makes the process easy.
+          </p>
+          <h2>Why Export Your Amazon Cart?</h2>
+          <ul>
+            <li>
+              <strong>To Use for Work or Business</strong>
+              – If you buy items for your job, school, or business, a CSV file
+              makes things easy to report, reorder, or file for expenses. You
+              can add extra columns for order dates, budget codes, or who the
+              items are for.
+            </li>
+            <li>
+              <strong>To Save Your Cart for Later</strong>
+              – Amazon doesn’t always keep items in your cart forever. Products
+              can go out of stock, prices can change, or you might accidentally
+              remove something. Exporting your cart helps you save a backup.
+              That way, even if something changes on Amazon, you still have a
+              list of what you planned to buy.
+            </li>
+            <li>
+              <strong>To Organize and Compare Items</strong>
+              – A CSV file opens in programs like Excel or Google Sheets. You
+              can sort by price, group similar products, or add your own notes
+              (like “Need by Friday” or “Check reviews”). This makes it easier
+              to choose between options or stick to a budget.
+            </li>
+          </ul>
+          <h2>Can You Export Your Cart on Amazon?</h2>
+          <p class="lead"><strong>Yes!</strong> You can either:</p>
+          <ul>
+            <li>
+              Use the extension
+              <a
+                href="https://chromewebstore.google.com/detail/bkcdmpcbhmafdmpekienmgfopacinonn"
+                target="_blank"
+                >Share Amazon Cart ↗</a
+              >
+            </li>
+            <li>Copy and paste each product seperately into a spreadsheet.</li>
+          </ul>
+          <p>
+            Amazon doesn’t have a “export cart” button, but you can still do it
+            by hand.
+          </p>
+          <h2>The Best Way: Use the "Share Amazon Cart" Extension</h2>
+          <p>
+            The best way to export your Amazon shopping cart is to use the
+            <a
+              href="https://chromewebstore.google.com/detail/bkcdmpcbhmafdmpekienmgfopacinonn"
+              target="_blank"
+              >Chrome Extension ↗</a
+            >. Normally, when you want to export a cart, you need to do it
+            manually. This tool exports all your cart items in one click,
+            <em>to CSV format</em>.
+          </p>
+          <h3>How to Use the Extension</h3>
+          <ol>
+            <li>
+              <strong>Install the extension</strong>. Go to the Share Amazon
+              Cart
+              <a
+                href="https://chromewebstore.google.com/detail/bkcdmpcbhmafdmpekienmgfopacinonn"
+                target="_blank"
+                >extension page ↗</a
+              >
+              and install it on Chrome or Edge.
+            </li>
+            <li>
+              <strong>Shop like usual</strong>. Add items to your Amazon cart
+              like you normally would.
+            </li>
+            <li>
+              <strong>Click "Share Cart"</strong>. Open any Amazon page and
+              click the new “Share Cart” button.
+            </li>
+            <li><strong>Export Cart</strong>. Click the export cart button.</li>
+          </ol>
+          <h3>Why It’s Better Than Other Methods</h3>
+          <ul>
+            <li>Automatically export your entire cart.</li>
+            <li>
+              Includes only the <em>important</em>
+              product information (title, price, quantities, and URLs).
+            </li>
+            <li>
+              Works with Amazon.com, international sites, Amazon Fresh, and
+              Whole Foods.
+            </li>
+            <li>Choose which items to export.</li>
+          </ul>
+
+          <a
+            class="block ring-2 ring-offset-2 ring-stone-400 mt-10 mb-10 m-auto w-72 text-base p-3 text-center rounded-lg bg-stone-800 font-medium text-white shadow-sm not-prose hover:bg-stone-600"
+            href="/share-amazon-cart-extension.html"
+            >Learn more about the extension</a
+          >
+          <hr />
+          <h3>Conclusion</h3>
+          <p>
+            The
+            <a
+              href="https://chromewebstore.google.com/detail/bkcdmpcbhmafdmpekienmgfopacinonn"
+              target="_blank"
+              >Share Amazon Cart Extension ↗</a
+            >
+            makes exporting your cart quick and easy. It’s perfect for sharing,
+            saving, or organizing your shopping. Whether you’re buying for
+            yourself, a group, or a business, having your cart in a CSV file
+            gives you more control.
+          </p>
+        </article>
+      </main>
+    </div>
+    <footer
+      class="mt-10 pl-12 pr-20 pt-12 pb-8 rounded-xl bg-stone-100 flex flex-col gap-x-5 md:flex-row justify-between"
+    >
+      <div class="flex flex-col space-y-3">
+        <a class="text-sm font-medium" href="/">Share Carts</a>
+        <div>
+          <p class="text-stone-600 tracking-tight text-xs">
+            Share Carts may receive affiliate commissions for purchases made
+            through links on this website
+          </p>
+          <p class="text-stone-600 tracking-tight text-xs mt-4">
+            © 2025 Share Carts
+          </p>
+        </div>
+      </div>
+      <div>
+        <div class="mx-auto md:flex gap-x-12">
+          <div class="flex flex-col truncate">
+            <p class="mb-1.5 text-sm font-medium tracking-tight">Resources</p>
+            <a
+              class="mb-0.5 w-max text-xs text-stone-700 hover:text-stone-800 hover:underline"
+              href="/"
+              >Home</a
+            >
+            <a
+              class="mb-0.5 w-max text-xs text-stone-700 hover:text-stone-800 hover:underline"
+              href="mailto:support@sharecarts.com"
+              >Contact</a
+            >
+            <a
+              class="mb-0.5 w-max text-xs text-stone-700 hover:text-stone-800 hover:underline"
+              href="/privacy.html"
+              >Privacy Policy</a
+            >
+          </div>
+          <div class="flex flex-col truncate">
+            <p class="mb-1.5 text-sm font-medium tracking-tight">Guides</p>
+            <a
+              class="mb-0.5 w-max text-xs text-stone-700 hover:text-stone-800 hover:underline"
+              href="/how-to/share-amazon-cart.html"
+              >How to Share Your Amazon Cart</a
+            ><a
+              class="mb-0.5 w-max text-xs text-stone-700 hover:text-stone-800 hover:underline"
+              href="/how-to/share-amazon-fresh-cart.html"
+              >How to Share Your Amazon Fresh Cart</a
+            >
+            <a
+              class="mb-0.5 w-max text-xs text-stone-700 hover:text-stone-800 hover:underline"
+              href="/how-to/share-amazon-whole-foods-cart.html"
+              >How to Share Your Whole Foods Cart</a
+            >
+            <a
+              class="mb-0.5 w-max text-xs text-stone-700 hover:text-stone-800 hover:underline"
+              href="/how-to/share-amazon-haul-cart.html"
+              >How to Share Your Amazon Haul Cart</a
+            >
+            <a
+              class="mb-0.5 w-max text-xs text-stone-700 hover:text-stone-800 hover:underline"
+              href="/how-to/export-amazon-cart.html"
+              >How to Export Amazon Cart</a
+            >
+            <a
+              class="mb-0.5 w-max text-xs text-stone-700 hover:text-stone-800 hover:underline"
+              href="/how-to/print-amazon-cart.html"
+              >How to Print Amazon Cart</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Scroll To Top Button HTML -->
+    <button id="wm-back-to-top">
+      <div class="btt-background"></div>
+      <div class="icon">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 64 64"
+          aria-labelledby="title"
+          role="img"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+        >
+          <title></title>
+          <path
+            data-name="layer2"
+            fill="none"
+            stroke="#202020"
+            stroke-miterlimit="10"
+            stroke-width="2"
+            d="M32 10v46"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+          ></path>
+          <path
+            data-name="layer1"
+            fill="none"
+            stroke="#202020"
+            stroke-miterlimit="10"
+            stroke-width="2"
+            d="M50 20 L32 4 14 20"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+          ></path>
+        </svg>
+      </div>
+    </button>
+
+    <!-- Scroll To Top Button Javascript -->
+    <script>
+      (function () {
+        let throttlePause;
+
+        document.addEventListener("click", function (e) {
+          if (!e.target.closest("#wm-back-to-top")) return;
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+          let btt = document.querySelector("#wm-back-to-top");
+          let body = document.body;
+          body.append(btt);
+          if (btt?.closest(".sqs-block-content")) {
+            btt.closest(".sqs-block-content").style.display = "inline";
+          }
+        });
+
+        const throttle = (callback, time) => {
+          if (throttlePause) return;
+
+          throttlePause = true;
+          setTimeout(() => {
+            callback();
+            throttlePause = false;
+          }, time);
+        };
+
+        const checkPos = () => {
+          let pos = document.documentElement.scrollTop,
+            revealHeight = window.innerHeight * 0.19,
+            bttButton = document.querySelector("#wm-back-to-top");
+          if (pos >= revealHeight) {
+            bttButton.classList.add("show");
+          } else {
+            bttButton.classList.remove("show");
+          }
+        };
+
+        window.addEventListener("scroll", () => {
+          throttle(checkPos, 150);
+        });
+        window.addEventListener("DOMContentLoaded", checkPos);
+      })();
+    </script>
+  </body>
+</html>
