@@ -1,15 +1,15 @@
 {
-    "config": {
-        "amazon": {
-            "wrapper": "#activeCartViewForm div[data-asin]",
-            "product": {
-                "currency": "[data-subtotal]",
-                "title": "span.sc-product-title",
-                "image": ".sc-product-image",
-                "product_id": "[data-asin]",
-                "quantity": "[data-quantity]",
-                "price": "[data-price]"
-            }
-        }
+  "config": {
+    "amazon": {
+      "wrapper": "#activeCartViewForm div[data-asin]",
+      "product": {
+        "currency": "[data-subtotal]",
+        "title": "span.sc-product-title",
+        "image": ".sc-product-image",
+        "product_id": "[data-asin]",
+        "quantity": "[data-quantity]",
+        "price": "[data-price]"
+      }
     }
+  }
 }
