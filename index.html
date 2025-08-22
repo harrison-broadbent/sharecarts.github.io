@@ -1,536 +1,731 @@
 <!DOCTYPE html>
 <html class="font-[Inter]" lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <title>Share Amazon Cart & More</title>
-  <link rel="canonical" href="https://sharecarts.com" />
-  <meta name="description"
-    content="Learn how to share your shopping cart on Amazon, Walmart, and thousands more! Share with friends, family, or co-workers in one click." />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-  </style>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M2TZ6RBVLX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-
-    gtag("config", "G-M2TZ6RBVLX");
-  </script>
-  <style>
-    #wm-back-to-top {
-      z-index: 999;
-      position: fixed;
-      display: flex;
-      bottom: 0;
-      right: 0;
-      min-width: 20px;
-      min-height: 20px;
-      flex-direction: row;
-      gap: 8px;
-      align-items: center;
-      justify-content: center;
-      box-sizing: content-box;
-      margin: 8px;
-      padding: 8px;
-      cursor: pointer;
-      opacity: 0;
-      overflow: hidden;
-      transform: translateY(0px) scale(1);
-      background: transparent;
-      border-radius: 50px;
-      border-width: 0px;
-      border-color: #000000;
-      border-style: solid;
-      visibility: hidden;
-      transition: opacity 0.3s ease, transform 0.3s ease,
-        visibility 0s ease 0.3s;
-      will-change: transform;
-      backdrop-filter: blur(0px);
-
-      &.show {
-        transform: translateY(0px);
-        opacity: 1;
-        visibility: visible;
-        transition: opacity 0.3s ease, transform 0.3s ease,
-          visibility 0s ease 0s;
+  <head>
+    <meta charset="UTF-8" />
+    <title>Share Amazon Cart & More</title>
+    <link rel="canonical" href="https://sharecarts.com" />
+    <meta
+      name="description"
+      content="Learn how to share your shopping cart on Amazon, Walmart, and thousands more! Share with friends, family, or co-workers in one click."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-M2TZ6RBVLX"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
       }
+      gtag("js", new Date());
 
-      .icon {
-        position: relative;
+      gtag("config", "G-M2TZ6RBVLX");
+    </script>
+    <style>
+      #wm-back-to-top {
+        z-index: 999;
+        position: fixed;
         display: flex;
+        bottom: 0;
+        right: 0;
+        min-width: 20px;
+        min-height: 20px;
+        flex-direction: row;
+        gap: 8px;
+        align-items: center;
         justify-content: center;
-        line-height: 0;
-        height: auto;
-        width: auto;
-      }
+        box-sizing: content-box;
+        margin: 8px;
+        padding: 8px;
+        cursor: pointer;
+        opacity: 0;
+        overflow: hidden;
+        transform: translateY(0px) scale(1);
+        background: transparent;
+        border-radius: 50px;
+        border-width: 0px;
+        border-color: #000000;
+        border-style: solid;
+        visibility: hidden;
+        transition: opacity 0.3s ease, transform 0.3s ease,
+          visibility 0s ease 0.3s;
+        will-change: transform;
+        backdrop-filter: blur(0px);
 
-      .text {
-        position: relative;
-        margin: 0;
-        font-size: 0.8rem;
-        font-weight: 500;
-        color: #000000;
-        text-transform: uppercase;
-      }
+        &.show {
+          transform: translateY(0px);
+          opacity: 1;
+          visibility: visible;
+          transition: opacity 0.3s ease, transform 0.3s ease,
+            visibility 0s ease 0s;
+        }
+        .icon {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          line-height: 0;
+          height: auto;
+          width: auto;
+        }
+        .text {
+          position: relative;
+          margin: 0;
+          font-size: 0.8rem;
+          font-weight: 500;
+          color: #000000;
+          text-transform: uppercase;
+        }
+        svg {
+          width: 15px;
+          height: 15px;
+        }
+        path {
+          stroke-width: 10px;
+          stroke: #ffffff;
+        }
+        .btt-background {
+          box-sizing: border-box;
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          background-color: #000000;
+          opacity: 1;
+          transition: opacity 0.3s ease;
+        }
 
-      svg {
-        width: 15px;
-        height: 15px;
+        &:hover {
+          transform: translateY(-3px);
+          opacity: 0.85;
+        }
+        &:active {
+          transform: translateY(-3px) scale(0.95);
+        }
       }
-
-      path {
-        stroke-width: 10px;
-        stroke: #ffffff;
-      }
-
-      .btt-background {
-        box-sizing: border-box;
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        background-color: #000000;
-        opacity: 1;
-        transition: opacity 0.3s ease;
-      }
-
-      &:hover {
-        transform: translateY(-3px);
-        opacity: 0.85;
-      }
-
-      &:active {
-        transform: translateY(-3px) scale(0.95);
-      }
-    }
-  </style>
-</head>
-
-<body class="mx-auto w-full max-w-3xl h-full">
-  <div class="px-3 py-4 min-h-[97vh]">
-    <header class="flex justify-between">
-      <div class="flex gap-2">
-        <img src="images/logo.png" width="60px" height="60px" alt="Share Carts on Amazon & More" />
+    </style>
+  </head>
+  <body class="h-full w-full max-w-3xl mx-auto">
+    <div class="min-h-[97vh] py-4 px-3">
+      <header class="flex justify-between">
+        <div class="flex gap-2">
+          <img
+            src="images/logo.png"
+            width="60px"
+            height="60px"
+            alt="Share Carts on Amazon & More"
+          />
+          <div class="mt-3">
+            <span
+              class="text-lg font-semibold tracking-tight leading-3 cursor-default"
+              >Share Carts</span
+            >
+            <span class="text-xs block leading-3"
+              >Share links to your shopping cart
+            </span>
+          </div>
+        </div>
         <div class="mt-3">
-          <span class="font-semibold text-lg leading-3 tracking-tight cursor-default">Share Carts</span>
-          <span class="block text-xs leading-3">Share links to your shopping cart
-          </span>
+          <a
+            class="inline-flex h-10 items-center justify-center rounded-xl bg-gradient-to-r from-green-400 to-blue-500 px-4 sm:px-6 text-xs sm:text-sm font-medium text-white shadow transition-colors hover:from-green-500 hover:to-blue-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950"
+            href="/create.html"
+            ><img
+              loading="lazy"
+              width="24"
+              height="24"
+              class="mr-2 hidden sm:block"
+              src="images/chrome.svg"
+            />Share Cart</a
+          >
         </div>
-      </div>
-      <div class="mt-3">
-        <a class="inline-flex justify-center items-center bg-gradient-to-r from-green-400 hover:from-green-500 to-blue-500 hover:to-blue-600 shadow px-4 sm:px-6 rounded-xl focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 h-10 font-medium text-white text-xs sm:text-sm transition-colors"
-          href="/create.html"><img loading="lazy" width="24" height="24" class="hidden sm:block mr-2"
-            src="images/chrome.svg" />Share Cart</a>
-      </div>
-    </header>
-    <div class="my-5 border-t"></div>
-    <main>
-      <h1 class="mt-10 font-semibold text-2xl sm:text-5xl text-center tracking-tight">
-        Share Amazon Cart & More
-      </h1>
-      <section
-        class="mx-auto mt-10 prose-h2:font-medium hover:prose-a:text-stone-800 prose-a:text-blue-600 prose-headings:text-center prose-headings:tracking-tight prose prose-base prose-stone">
-        <h2 class="mt-5 text-lg sm:text-2xl">Learn how to share carts on your <span class="italic">favorite
-            stores</span>!</h2>
-        <p class="bg-stone-50 shadow p-5 border border-stone-200 rounded-3xl text-base">
-          Find answers to common questions about sharing a cart on Amazon (<em>and more stores</em>). Have a different
-          question and can’t find the answer you’re
-          looking for? Reach out
-          <a target="_blank"
-            href="https://docs.google.com/forms/d/e/1FAIpQLSfgVkcPvPheLw9ZHLaRdNR01EJGiT9i0MiUyf64GFaiwyw4Mg/viewform?pli=1">here</a>
-          and we’ll get back to you as soon as possible.
-        </p>
-        <dl>
-          <dt>Can I share my Amazon cart?</dt>
-          <dd>
-            <p>
-              <strong>Yes!</strong>
-              You can share your Amazon shopping cart by using a link that
-              shows all the items in it. The person you send it to will see
-              the exact products and quantities, so there's no confusion. Cart
-              links are a super easy way to share multiple items at once.
-            </p>
-            <p>
-              After receiving your link, all the other person has to do is
-              click 'Add to Cart'.
-            </p>
-            <figure>
-              <img alt="Amazon Cart Link Example" class="shadow-2xl mt-5 rounded-md ring-1 ring-stone-900/10"
-                src="images/amazon_cart_link.png" />
-              <figcaption class="text-center">
-                <span>Example</span>:
-                <a href="https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B0B94J7ZM7&Quantity.1=1&ASIN.2=B01D0Q7JU4&Quantity.2=1&ASIN.3=B07NCNRCMV&Quantity.3=1&ASIN.4=B0D9LCL7FT&Quantity.4=1&ASIN.5=B09TSRBS47&Quantity.5=1&AssociateTag=sharecarts0c-20"
-                  target="_blank">Amazon Cart Link</a>
-                <span class="block mt-1 text-stone-400 text-xs">As an Amazon Associate I earn from qualifying
-                  purchases.</span>
-              </figcaption>
-            </figure>
-          </dd>
-          <dt>How to Share My Amazon Cart?</dt>
-          <dd>
-            <ol>
-              <li>
-                Open our
-                <a href="/create.html">Share Carts</a> tool.
+      </header>
+      <div class="my-5 border-t"></div>
+      <main>
+        <h1
+          class="text-center font-semibold tracking-tight text-2xl sm:text-5xl mt-10"
+        >
+          Share Amazon Cart & More
+        </h1>
+        <section
+          class="mt-10 prose prose-headings:tracking-tight prose-h2:font-medium mx-auto prose-base prose-stone prose-headings:text-center prose-a:text-blue-600 hover:prose-a:text-stone-800"
+        >
+          <h2 class="mt-5 text-lg sm:text-2xl">Learn how to share carts on your <span class="italic">favorite stores</span>!</h2>
+          <p class="bg-stone-50 border border-stone-200 p-5 rounded-3xl shadow text-base">
+            Find answers to common questions about sharing a cart on Amazon (<em
+              >and more stores</em
+            >). Have a different question and can’t find the answer you’re
+            looking for? Reach out
+            <a
+              target="_blank"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfgVkcPvPheLw9ZHLaRdNR01EJGiT9i0MiUyf64GFaiwyw4Mg/viewform?pli=1"
+              >here</a
+            >
+            and we’ll get back to you as soon as possible.
+          </p>
+          <dl>
+            <dt>Can I share my Amazon cart?</dt>
+            <dd>
+              <p>
+                <strong>Yes!</strong>
+                You can share your Amazon shopping cart by using a link that
+                shows all the items in it. The person you send it to will see
+                the exact products and quantities, so there's no confusion. Cart
+                links are a super easy way to share multiple items at once.
+              </p>
+              <p>
+                After receiving your link, all the other person has to do is
+                click 'Add to Cart'.
+              </p>
+              <figure>
+                <img
+                  alt="Amazon Cart Link Example"
+                  class="mt-5 shadow-2xl rounded-md ring-1 ring-stone-900/10"
+                  src="images/amazon_cart_link.png"
+                />
+                <figcaption class="text-center">
+                  <span>Example</span>:
+                  <a
+                    href="https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=B0B94J7ZM7&Quantity.1=1&ASIN.2=B01D0Q7JU4&Quantity.2=1&ASIN.3=B07NCNRCMV&Quantity.3=1&ASIN.4=B0D9LCL7FT&Quantity.4=1&ASIN.5=B09TSRBS47&Quantity.5=1&AssociateTag=sharecarts0c-20"
+                    target="_blank"
+                    >Amazon Cart Link</a
+                  >
+                  <span class="block text-stone-400 mt-1 text-xs"
+                    >As an Amazon Associate I earn from qualifying
+                    purchases.</span
+                  >
+                </figcaption>
+              </figure>
+            </dd>
+            <dt>How to Share My Amazon Cart?</dt>
+            <dd>
+              <ol>
+                <li>
+                  Open our
+                  <a
+                    href="/create.html"
+                    >Share Carts</a
+                  > tool.
+                </li>
+                <li>Add links from your Amazon cart.</li>
+                <li>Copy the link and share it with someone!</li>
+              </ol>
+              <p>
+                By using the Share Carts tool, you can avoid the
+                manual process of sending someone all your cart items
+                separately.
+                <em>It's free and only takes 30 seconds to get started!</em>
+              </p>
+            </dd>
+            <dt>Who can I share an Amazon cart with?</dt>
+            <dd>
+              <ul>
+                <li>
+                  <strong>Family</strong> - You can share your Amazon cart with
+                  your family. This includes your mom, dad, sister, brother, or
+                  anyone else in your household.
+                </li>
+                <li>
+                  <strong>Friends</strong> - You can also share a cart with your
+                  friends.
+                </li>
+                <li>
+                  <strong>Roommates</strong> - Sharing your cart with a roommate
+                  or housemate can help everyone stay organized.
+                </li>
+                <li>
+                  <strong>Your Partner</strong> - Do you live with a boyfriend,
+                  girlfriend, or spouse? Cart sharing with your partner can make
+                  life simpler.
+                </li>
+                <li>
+                  <strong>Coworkers</strong> - Sometimes, you shop for work. In
+                  those cases, sharing your Amazon cart with coworkers or team
+                  members is useful.
+                </li>
+                <li>
+                  <strong>Clients or Customers</strong>
+                  - If you have a small business or do freelance work, you might
+                  need to share your Amazon cart with a client.
+                </li>
+                <li>
+                  <strong>Online Communities</strong>
+                  - You might also want to share a cart with online groups —
+                  like Reddit, Facebook groups, Discord, or forums.
+                </li>
+              </ul>
+            </dd>
+            <dt>What are common use cases for sharing a cart on Amazon?</dt>
+            <dd>
+              <ul>
+                <li>
+                  <strong>Holiday Shopping</strong>
+                  - Plan and share gift lists for birthdays, Christmas, or other
+                  events to avoid duplicates and stick to a budget.
+                </li>
+                <li>
+                  <strong>Group Gift Buying</strong>
+                  - Let friends or family add and review items before buying
+                  together.
+                </li>
+                <li>
+                  <strong>Office or Team Purchases</strong>
+                  - Easily coordinate bulk buys like office supplies or
+                  uniforms.
+                </li>
+                <li>
+                  <strong>Grocery and Home Shopping</strong>
+                  - Share carts for groceries or household items so everyone
+                  gets what they need.
+                </li>
+                <li>
+                  <strong>Event Planning</strong>
+                  - Organize carts for weddings, parties, or other events where
+                  multiple people are buying items.
+                </li>
+              </ul>
+            </dd>
+            <dt>Where else can I share a cart?</dt>
+            <dd>
+              In addition to Amazon,
+              <em>share your cart on top online stores such as</em>: Walmart,
+              Newegg, Instacart, IKEA, and more. Browse our in-depth
+              <a href="#guides">guides</a> on how to generate these cart links.
+              Stores powered by Shopify are also supported, which adds millions
+              of additional stores.
+            </dd>
+            <dt>
+              What are the differences between a wishlist and share cart links?
+            </dt>
+            <dd>
+              Amazon wishlists don’t let you easily move all items to your cart
+              with the exact quantities. Share cart links solve this by creating
+              a single link to your exact cart items.
+            </dd>
+          </dl>
+        </section>
+         <section
+          id="guides"
+          class="bg-stone-50 p-10 rounded-3xl mt-10 shadow border border-stone-200"
+        >
+          <h3
+            class="font-semibold text-xl sm:text-2xl tracking-tight mb-5 text-stone-950 text-center underline underline-offset-2"
+          >
+            How-To Guides
+          </h3>
+          <div class="sm:pl-3">
+            <span
+              class="italic text-lg font-medium tracking-tight text-stone-950"
+              >Amazon Guides</span
+            >
+            <ul class="list-disc marker:text-stone-700 pl-6">
+              <li class="pb-1">
+                <a
+                  href="how-to/share-amazon-cart.html"
+                  class="text-stone-700 hover:text-stone-800 hover:underline"
+                  >How to Share Your Amazon Cart</a
+                >
               </li>
-              <li>Add links from your Amazon cart.</li>
-              <li>Copy the link and share it with someone!</li>
-            </ol>
-            <p>
-              By using the Share Carts tool, you can avoid the
-              manual process of sending someone all your cart items
-              separately.
-              <em>It's free and only takes 30 seconds to get started!</em>
-            </p>
-          </dd>
-          <dt>Who can I share an Amazon cart with?</dt>
-          <dd>
-            <ul>
-              <li>
-                <strong>Family</strong> - You can share your Amazon cart with
-                your family. This includes your mom, dad, sister, brother, or
-                anyone else in your household.
+              <li class="pb-1">
+                <a
+                  href="how-to/share-amazon-fresh-cart.html"
+                  class="text-stone-700 hover:text-stone-800 hover:underline"
+                  >How to Share Your Amazon Fresh Cart</a
+                >
               </li>
-              <li>
-                <strong>Friends</strong> - You can also share a cart with your
-                friends.
+              <li class="pb-1">
+                <a
+                  href="how-to/share-amazon-whole-foods-cart.html"
+                  class="text-stone-700 hover:text-stone-800 hover:underline"
+                  >How to Share Your Whole Foods Cart</a
+                >
               </li>
-              <li>
-                <strong>Roommates</strong> - Sharing your cart with a roommate
-                or housemate can help everyone stay organized.
+              <li class="pb-1">
+                <a
+                  href="how-to/share-amazon-haul-cart.html"
+                  class="text-stone-700 hover:text-stone-800 hover:underline"
+                  >How to Share Your Amazon Haul Cart</a
+                >
               </li>
-              <li>
-                <strong>Your Partner</strong> - Do you live with a boyfriend,
-                girlfriend, or spouse? Cart sharing with your partner can make
-                life simpler.
+              <li class="pb-1">
+                <a
+                  href="how-to/export-amazon-cart.html"
+                  class="text-stone-700 hover:text-stone-800 hover:underline"
+                  >How to Export Amazon Cart</a
+                >
               </li>
-              <li>
-                <strong>Coworkers</strong> - Sometimes, you shop for work. In
-                those cases, sharing your Amazon cart with coworkers or team
-                members is useful.
-              </li>
-              <li>
-                <strong>Clients or Customers</strong>
-                - If you have a small business or do freelance work, you might
-                need to share your Amazon cart with a client.
-              </li>
-              <li>
-                <strong>Online Communities</strong>
-                - You might also want to share a cart with online groups —
-                like Reddit, Facebook groups, Discord, or forums.
+              <li class="pb-1">
+                <a
+                  href="how-to/print-amazon-cart.html"
+                  class="text-stone-700 hover:text-stone-800 hover:underline"
+                  >How to Print Amazon Cart</a
+                >
               </li>
             </ul>
-          </dd>
-          <dt>What are common use cases for sharing a cart on Amazon?</dt>
-          <dd>
-            <ul>
-              <li>
-                <strong>Holiday Shopping</strong>
-                - Plan and share gift lists for birthdays, Christmas, or other
-                events to avoid duplicates and stick to a budget.
+            <span
+              class="block mt-5 italic text-lg font-medium tracking-tight text-stone-950"
+              >Other Stores</span
+            >
+            <ul class="list-disc marker:text-stone-700 pl-6">
+              <li class="pb-1">
+                <a
+                  href="how-to/share-walmart-cart.html"
+                  class="text-stone-700 hover:text-stone-800 hover:underline"
+                  >How to Share Your Walmart Cart</a
+                >
               </li>
-              <li>
-                <strong>Group Gift Buying</strong>
-                - Let friends or family add and review items before buying
-                together.
+              <li class="pb-1">
+                <a
+                  href="how-to/share-instacart-cart.html"
+                  class="text-stone-700 hover:text-stone-800 hover:underline"
+                  >How to Share Your Instacart Cart</a
+                >
               </li>
-              <li>
-                <strong>Office or Team Purchases</strong>
-                - Easily coordinate bulk buys like office supplies or
-                uniforms.
+              <li class="pb-1">
+                <a
+                  href="how-to/share-newegg-cart.html"
+                  class="text-stone-700 hover:text-stone-800 hover:underline"
+                  >How to Share Your Newegg Cart</a
+                >
               </li>
-              <li>
-                <strong>Grocery and Home Shopping</strong>
-                - Share carts for groceries or household items so everyone
-                gets what they need.
+              <li class="pb-1">
+                <a
+                  href="how-to/share-kroger-cart.html"
+                  class="text-stone-700 hover:text-stone-800 hover:underline"
+                  >How to Share Your Kroger Cart</a
+                >
               </li>
-              <li>
-                <strong>Event Planning</strong>
-                - Organize carts for weddings, parties, or other events where
-                multiple people are buying items.
+              <li class="pb-1">
+                <a
+                  href="how-to/share-walgreens-cart.html"
+                  class="text-stone-700 hover:text-stone-800 hover:underline"
+                  >How to Share Your Walgreens Cart</a
+                >
+              </li>
+              <li class="pb-1">
+                <a
+                  href="how-to/share-ikea-cart.html"
+                  class="text-stone-700 hover:text-stone-800 hover:underline"
+                  >How to Share Your IKEA Cart</a
+                >
+              </li>
+              <li class="pb-1">
+                <a
+                  href="how-to/share-bestbuy-cart.html"
+                  class="text-stone-700 hover:text-stone-800 hover:underline"
+                  >How to Share Your Best Buy Cart</a
+                >
+              </li>
+              <li class="pb-1">
+                <a
+                  href="how-to/share-bh-photo-cart.html"
+                  class="text-stone-700 hover:text-stone-800 hover:underline"
+                  >How to Share Your B&H Photo Cart</a
+                >
+              </li>
+              <li class="pb-1">
+                <a
+                  href="how-to/share-shopify-cart.html"
+                  class="text-stone-700 hover:text-stone-800 hover:underline"
+                  >How to Share Your Cart on Shopify Powered Stores</a
+                >
               </li>
             </ul>
-          </dd>
-          <dt>Where else can I share a cart?</dt>
-          <dd>
-            In addition to Amazon,
-            <em>share your cart on top online stores such as</em>: Walmart,
-            Newegg, Instacart, IKEA, and more. Browse our in-depth
-            <a href="#guides">guides</a> on how to generate these cart links.
-            Stores powered by Shopify are also supported, which adds millions
-            of additional stores.
-          </dd>
-          <dt>
-            What are the differences between a wishlist and share cart links?
-          </dt>
-          <dd>
-            Amazon wishlists don’t let you easily move all items to your cart
-            with the exact quantities. Share cart links solve this by creating
-            a single link to your exact cart items.
-          </dd>
-        </dl>
-      </section>
-      <section id="guides" class="bg-stone-50 shadow mt-10 p-10 border border-stone-200 rounded-3xl">
-        <h3
-          class="mb-5 font-semibold text-stone-950 text-xl sm:text-2xl text-center underline underline-offset-2 tracking-tight">
-          How-To Guides
-        </h3>
-        <div class="sm:pl-3">
-          <span class="font-medium text-stone-950 text-lg italic tracking-tight">Amazon Guides</span>
-          <ul class="pl-6 marker:text-stone-700 list-disc">
-            <li class="pb-1">
-              <a href="how-to/share-amazon-cart.html" class="text-stone-700 hover:text-stone-800 hover:underline">How to
-                Share Your Amazon Cart</a>
-            </li>
-            <li class="pb-1">
-              <a href="how-to/share-amazon-fresh-cart.html"
-                class="text-stone-700 hover:text-stone-800 hover:underline">How to Share Your Amazon Fresh Cart</a>
-            </li>
-            <li class="pb-1">
-              <a href="how-to/share-amazon-whole-foods-cart.html"
-                class="text-stone-700 hover:text-stone-800 hover:underline">How to Share Your Whole Foods Cart</a>
-            </li>
-            <li class="pb-1">
-              <a href="how-to/share-amazon-haul-cart.html"
-                class="text-stone-700 hover:text-stone-800 hover:underline">How to Share Your Amazon Haul Cart</a>
-            </li>
-            <li class="pb-1">
-              <a href="how-to/export-amazon-cart.html" class="text-stone-700 hover:text-stone-800 hover:underline">How
-                to Export Amazon Cart</a>
-            </li>
-            <li class="pb-1">
-              <a href="how-to/print-amazon-cart.html" class="text-stone-700 hover:text-stone-800 hover:underline">How to
-                Print Amazon Cart</a>
-            </li>
-          </ul>
-          <span class="block mt-5 font-medium text-stone-950 text-lg italic tracking-tight">Other Stores</span>
-          <ul class="pl-6 marker:text-stone-700 list-disc">
-            <li class="pb-1">
-              <a href="how-to/share-walmart-cart.html" class="text-stone-700 hover:text-stone-800 hover:underline">How
-                to Share Your Walmart Cart</a>
-            </li>
-            <li class="pb-1">
-              <a href="how-to/share-instacart-cart.html" class="text-stone-700 hover:text-stone-800 hover:underline">How
-                to Share Your Instacart Cart</a>
-            </li>
-            <li class="pb-1">
-              <a href="how-to/share-newegg-cart.html" class="text-stone-700 hover:text-stone-800 hover:underline">How to
-                Share Your Newegg Cart</a>
-            </li>
-            <li class="pb-1">
-              <a href="how-to/share-kroger-cart.html" class="text-stone-700 hover:text-stone-800 hover:underline">How to
-                Share Your Kroger Cart</a>
-            </li>
-            <li class="pb-1">
-              <a href="how-to/share-walgreens-cart.html" class="text-stone-700 hover:text-stone-800 hover:underline">How
-                to Share Your Walgreens Cart</a>
-            </li>
-            <li class="pb-1">
-              <a href="how-to/share-ikea-cart.html" class="text-stone-700 hover:text-stone-800 hover:underline">How to
-                Share Your IKEA Cart</a>
-            </li>
-            <li class="pb-1">
-              <a href="how-to/share-bestbuy-cart.html" class="text-stone-700 hover:text-stone-800 hover:underline">How
-                to Share Your Best Buy Cart</a>
-            </li>
-            <li class="pb-1">
-              <a href="how-to/share-bh-photo-cart.html" class="text-stone-700 hover:text-stone-800 hover:underline">How
-                to Share Your B&H Photo Cart</a>
-            </li>
-            <li class="pb-1">
-              <a href="how-to/share-shopify-cart.html" class="text-stone-700 hover:text-stone-800 hover:underline">How
-                to Share Your Cart on Shopify Powered Stores</a>
-            </li>
-          </ul>
+          </div>
+        </section>
+        <section
+          class="bg-stone-50 p-10 rounded-3xl mt-10 shadow border border-stone-200"
+        >
+          <h3
+            class="text-stone-950 font-semibold text-xl sm:text-2xl tracking-tight mb-5 text-center underline underline-offset-[2px]"
+          >
+            Latest Blog Posts
+          </h3>
+          <div class="pl-3">
+            <ul class="list-disc marker:text-stone-700">
+              <li class="pb-1">
+                <a
+                  href="blog/transfer-amazon-cart.html"
+                  class="text-stone-700 hover:text-stone-800 hover:underline"
+                >
+                  <time class="text-sm text-black" datetime="2025-04"
+                    >(Apr, 2025)</time
+                  >
+                  Transfer Amazon Cart to Another Account</a
+                >
+              </li>
+              <li class="pb-1">
+                <a
+                  href="blog/send-amazon-cart.html"
+                  class="text-stone-700 hover:text-stone-800 hover:underline"
+                >
+                  <time class="text-sm text-black" datetime="2025-04"
+                    >(Apr, 2025)</time
+                  >
+                  Send Amazon Cart to Someone
+                </a>
+              </li>
+              <li class="pb-1">
+                <a
+                  href="blog/share-amazon-cart-without-signing-in.html"
+                  class="text-stone-700 hover:text-stone-800 hover:underline"
+                >
+                  <time class="text-sm text-black" datetime="2025-04"
+                    >(Apr, 2025)</time
+                  >
+                  Share Amazon Cart Without Signing In
+                </a>
+              </li>
+              <li class="pb-1">
+                <a
+                  href="blog/easter-cart.html"
+                  class="text-stone-700 hover:text-stone-800 hover:underline"
+                >
+                  <time class="text-sm text-black" datetime="2025-03"
+                    >(Mar, 2025)</time
+                  >
+                  Coordinate Easter Holiday Shopping</a
+                >
+              </li>
+              <li class="pb-1">
+                <a
+                  href="blog/influencer-tips.html"
+                  class="text-stone-700 hover:text-stone-800 hover:underline"
+                >
+                  <time class="text-sm text-black" datetime="2025-03"
+                    >(Mar, 2025)</time
+                  >
+                  Influencer Tips When Sharing Products With Your Audience</a
+                >
+              </li>
+              <li class="pb-1">
+                <a
+                  href="blog/share-recipe-list.html"
+                  class="text-stone-700 hover:text-stone-800 hover:underline"
+                >
+                  <time class="text-sm text-black" datetime="2025-02"
+                    >(Feb, 2025)</time
+                  >
+                  Recipe Ingredient List Purchasing Made Easy</a
+                >
+              </li>
+              <li class="pb-1">
+                <a
+                  href="blog/share-with-friends.html"
+                  class="text-stone-700 hover:text-stone-800 hover:underline"
+                >
+                  <time class="text-sm text-black" datetime="2025-02"
+                    >(Feb, 2025)</time
+                  >
+                  Share Amazon Cart With Friends</a
+                >
+              </li>
+              <li class="pb-1">
+                <a
+                  href="blog/share-with-coworkers.html"
+                  class="text-stone-700 hover:text-stone-800 hover:underline"
+                  ><time class="text-sm text-black" datetime="2025-02"
+                    >(Feb, 2025)</time
+                  >
+                  Share Amazon Cart With Co-Workers
+                </a>
+              </li>
+              <li class="pb-1">
+                <a
+                  href="blog/share-classroom-list.html"
+                  class="text-stone-700 hover:text-stone-800 hover:underline"
+                  ><time class="text-sm text-black" datetime="2025-02"
+                    >(Feb, 2025)</time
+                  >
+                  Share a Classroom List With Your Students
+                </a>
+              </li>
+              <li class="pb-1">
+                <a
+                  href="blog/share-with-roommates.html"
+                  class="text-stone-700 hover:text-stone-800 hover:underline"
+                  ><time class="text-sm text-black" datetime="2025-01"
+                    >(Jan, 2025)</time
+                  >
+                  Share Shopping Items With Your Roommates</a
+                >
+              </li>
+              <li class="pb-1">
+                <a
+                  href="blog/share-with-family.html"
+                  class="text-stone-700 hover:text-stone-800 hover:underline"
+                >
+                  <time class="text-sm text-black" datetime="2025-01"
+                    >(Jan, 2025)</time
+                  >
+                  Share Amazon Cart With Family</a
+                >
+              </li>
+            </ul>
+          </div>
+        </section>
+      </main>
+    </div>
+    <footer
+      class="mt-10 pl-12 pr-20 pt-12 pb-8 rounded-xl bg-stone-100 flex flex-col gap-x-5 md:flex-row justify-between"
+    >
+      <div class="flex flex-col space-y-3">
+        <a class="text-sm font-medium" href="/">Share Carts</a>
+        <div>
+          <p class="text-stone-600 tracking-tight text-xs">
+            Share Carts may receive affiliate commissions for purchases made
+            through links on this website
+          </p>
+          <p class="text-stone-600 tracking-tight text-xs mt-4">
+            © 2025 Share Carts
+          </p>
         </div>
-      </section>
-      <section class="bg-stone-50 shadow mt-10 p-10 border border-stone-200 rounded-3xl">
-        <h3
-          class="mb-5 font-semibold text-stone-950 text-xl sm:text-2xl text-center underline underline-offset-[2px] tracking-tight">
-          Latest Blog Posts
-        </h3>
-        <div class="pl-3">
-          <ul class="marker:text-stone-700 list-disc">
-            <li class="pb-1">
-              <a href="blog/transfer-amazon-cart.html" class="text-stone-700 hover:text-stone-800 hover:underline">
-                <time class="text-black text-sm" datetime="2025-04">(Apr, 2025)</time>
-                Transfer Amazon Cart to Another Account</a>
-            </li>
-            <li class="pb-1">
-              <a href="blog/send-amazon-cart.html" class="text-stone-700 hover:text-stone-800 hover:underline">
-                <time class="text-black text-sm" datetime="2025-04">(Apr, 2025)</time>
-                Send Amazon Cart to Someone
-              </a>
-            </li>
-            <li class="pb-1">
-              <a href="blog/share-amazon-cart-without-signing-in.html"
-                class="text-stone-700 hover:text-stone-800 hover:underline">
-                <time class="text-black text-sm" datetime="2025-04">(Apr, 2025)</time>
-                Share Amazon Cart Without Signing In
-              </a>
-            </li>
-            <li class="pb-1">
-              <a href="blog/easter-cart.html" class="text-stone-700 hover:text-stone-800 hover:underline">
-                <time class="text-black text-sm" datetime="2025-03">(Mar, 2025)</time>
-                Coordinate Easter Holiday Shopping</a>
-            </li>
-            <li class="pb-1">
-              <a href="blog/influencer-tips.html" class="text-stone-700 hover:text-stone-800 hover:underline">
-                <time class="text-black text-sm" datetime="2025-03">(Mar, 2025)</time>
-                Influencer Tips When Sharing Products With Your Audience</a>
-            </li>
-            <li class="pb-1">
-              <a href="blog/share-recipe-list.html" class="text-stone-700 hover:text-stone-800 hover:underline">
-                <time class="text-black text-sm" datetime="2025-02">(Feb, 2025)</time>
-                Recipe Ingredient List Purchasing Made Easy</a>
-            </li>
-            <li class="pb-1">
-              <a href="blog/share-with-friends.html" class="text-stone-700 hover:text-stone-800 hover:underline">
-                <time class="text-black text-sm" datetime="2025-02">(Feb, 2025)</time>
-                Share Amazon Cart With Friends</a>
-            </li>
-            <li class="pb-1">
-              <a href="blog/share-with-coworkers.html" class="text-stone-700 hover:text-stone-800 hover:underline"><time
-                  class="text-black text-sm" datetime="2025-02">(Feb, 2025)</time>
-                Share Amazon Cart With Co-Workers
-              </a>
-            </li>
-            <li class="pb-1">
-              <a href="blog/share-classroom-list.html" class="text-stone-700 hover:text-stone-800 hover:underline"><time
-                  class="text-black text-sm" datetime="2025-02">(Feb, 2025)</time>
-                Share a Classroom List With Your Students
-              </a>
-            </li>
-            <li class="pb-1">
-              <a href="blog/share-with-roommates.html" class="text-stone-700 hover:text-stone-800 hover:underline"><time
-                  class="text-black text-sm" datetime="2025-01">(Jan, 2025)</time>
-                Share Shopping Items With Your Roommates</a>
-            </li>
-            <li class="pb-1">
-              <a href="blog/share-with-family.html" class="text-stone-700 hover:text-stone-800 hover:underline">
-                <time class="text-black text-sm" datetime="2025-01">(Jan, 2025)</time>
-                Share Amazon Cart With Family</a>
-            </li>
-          </ul>
-        </div>
-      </section>
-    </main>
-  </div>
-  <footer
-    class="flex md:flex-row flex-col justify-between gap-x-5 bg-stone-100 mt-10 pt-12 pr-20 pb-8 pl-12 rounded-xl">
-    <div class="flex flex-col space-y-3">
-      <a class="font-medium text-sm" href="/">Share Carts</a>
+      </div>
       <div>
-        <p class="text-stone-600 text-xs tracking-tight">
-          Share Carts may receive affiliate commissions for purchases made
-          through links on this website
-        </p>
-        <p class="mt-4 text-stone-600 text-xs tracking-tight">
-          © 2025 Share Carts
-        </p>
-      </div>
-    </div>
-    <div>
-      <div class="md:flex gap-x-12 mx-auto">
-        <div class="flex flex-col truncate">
-          <p class="mb-1.5 font-medium text-sm tracking-tight">Resources</p>
-          <a class="mb-0.5 w-max text-stone-700 hover:text-stone-800 text-xs hover:underline" href="/">Home</a>
-          <a class="mb-0.5 w-max text-stone-700 hover:text-stone-800 text-xs hover:underline"
-            href="mailto:support@sharecarts.com">Contact</a>
-          <a class="mb-0.5 w-max text-stone-700 hover:text-stone-800 text-xs hover:underline"
-            href="/privacy.html">Privacy Policy</a>
+        <div class="mx-auto md:flex gap-x-12">
+          <div class="flex flex-col truncate">
+            <p class="mb-1.5 text-sm font-medium tracking-tight">Resources</p>
+            <a
+              class="mb-0.5 w-max text-xs text-stone-700 hover:text-stone-800 hover:underline"
+              href="/"
+              >Home</a
+            >
+            <a
+              class="mb-0.5 w-max text-xs text-stone-700 hover:text-stone-800 hover:underline"
+              href="mailto:support@sharecarts.com"
+              >Contact</a
+            >
+            <a
+              class="mb-0.5 w-max text-xs text-stone-700 hover:text-stone-800 hover:underline"
+              href="/privacy.html"
+              >Privacy Policy</a
+            >
+          </div>
+          <div class="flex flex-col truncate">
+            <p class="mb-1.5 text-sm font-medium tracking-tight">Guides</p>
+            <a
+              class="mb-0.5 w-max text-xs text-stone-700 hover:text-stone-800 hover:underline"
+              href="/how-to/share-amazon-cart.html"
+              >How to Share Your Amazon Cart</a
+            ><a
+              class="mb-0.5 w-max text-xs text-stone-700 hover:text-stone-800 hover:underline"
+              href="/how-to/share-amazon-fresh-cart.html"
+              >How to Share Your Amazon Fresh Cart</a
+            >
+            <a
+              class="mb-0.5 w-max text-xs text-stone-700 hover:text-stone-800 hover:underline"
+              href="/how-to/share-amazon-whole-foods-cart.html"
+              >How to Share Your Whole Foods Cart</a
+            >
+            <a
+              class="mb-0.5 w-max text-xs text-stone-700 hover:text-stone-800 hover:underline"
+              href="/how-to/share-amazon-haul-cart.html"
+              >How to Share Your Amazon Haul Cart</a
+            >
+            <a
+              class="mb-0.5 w-max text-xs text-stone-700 hover:text-stone-800 hover:underline"
+              href="/how-to/export-amazon-cart.html"
+              >How to Export Amazon Cart</a
+            >
+            <a
+              class="mb-0.5 w-max text-xs text-stone-700 hover:text-stone-800 hover:underline"
+              href="/how-to/print-amazon-cart.html"
+              >How to Print Amazon Cart</a
+            >
+          </div>
         </div>
-        <div class="flex flex-col truncate">
-          <p class="mb-1.5 font-medium text-sm tracking-tight">Guides</p>
-          <a class="mb-0.5 w-max text-stone-700 hover:text-stone-800 text-xs hover:underline"
-            href="/how-to/share-amazon-cart.html">How to Share Your Amazon Cart</a><a
-            class="mb-0.5 w-max text-stone-700 hover:text-stone-800 text-xs hover:underline"
-            href="/how-to/share-amazon-fresh-cart.html">How to Share Your Amazon Fresh Cart</a>
-          <a class="mb-0.5 w-max text-stone-700 hover:text-stone-800 text-xs hover:underline"
-            href="/how-to/share-amazon-whole-foods-cart.html">How to Share Your Whole Foods Cart</a>
-          <a class="mb-0.5 w-max text-stone-700 hover:text-stone-800 text-xs hover:underline"
-            href="/how-to/share-amazon-haul-cart.html">How to Share Your Amazon Haul Cart</a>
-          <a class="mb-0.5 w-max text-stone-700 hover:text-stone-800 text-xs hover:underline"
-            href="/how-to/export-amazon-cart.html">How to Export Amazon Cart</a>
-          <a class="mb-0.5 w-max text-stone-700 hover:text-stone-800 text-xs hover:underline"
-            href="/how-to/print-amazon-cart.html">How to Print Amazon Cart</a>
-        </div>
       </div>
-    </div>
-  </footer>
-  <!-- Scroll To Top Button HTML -->
-  <button id="wm-back-to-top">
-    <div class="btt-background"></div>
-    <div class="icon">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-labelledby="title" role="img"
-        xmlns:xlink="http://www.w3.org/1999/xlink">
-        <title></title>
-        <path data-name="layer2" fill="none" stroke="#202020" stroke-miterlimit="10" stroke-width="2" d="M32 10v46"
-          stroke-linejoin="round" stroke-linecap="round"></path>
-        <path data-name="layer1" fill="none" stroke="#202020" stroke-miterlimit="10" stroke-width="2"
-          d="M50 20 L32 4 14 20" stroke-linejoin="round" stroke-linecap="round"></path>
-      </svg>
-    </div>
-  </button>
+    </footer>
+    <!-- Scroll To Top Button HTML -->
+    <button id="wm-back-to-top">
+      <div class="btt-background"></div>
+      <div class="icon">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 64 64"
+          aria-labelledby="title"
+          role="img"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+        >
+          <title></title>
+          <path
+            data-name="layer2"
+            fill="none"
+            stroke="#202020"
+            stroke-miterlimit="10"
+            stroke-width="2"
+            d="M32 10v46"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+          ></path>
+          <path
+            data-name="layer1"
+            fill="none"
+            stroke="#202020"
+            stroke-miterlimit="10"
+            stroke-width="2"
+            d="M50 20 L32 4 14 20"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+          ></path>
+        </svg>
+      </div>
+    </button>
 
-  <!-- Scroll To Top Button Javascript -->
-  <script>
-    (function () {
-      let throttlePause;
+    <!-- Scroll To Top Button Javascript -->
+    <script>
+      (function () {
+        let throttlePause;
 
-      document.addEventListener("click", function (e) {
-        if (!e.target.closest("#wm-back-to-top")) return;
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
+        document.addEventListener("click", function (e) {
+          if (!e.target.closest("#wm-back-to-top")) return;
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
         });
-      });
 
-      document.addEventListener("DOMContentLoaded", function () {
-        let btt = document.querySelector("#wm-back-to-top");
-        let body = document.body;
-        body.append(btt);
-        if (btt?.closest(".sqs-block-content")) {
-          btt.closest(".sqs-block-content").style.display = "inline";
-        }
-      });
+        document.addEventListener("DOMContentLoaded", function () {
+          let btt = document.querySelector("#wm-back-to-top");
+          let body = document.body;
+          body.append(btt);
+          if (btt?.closest(".sqs-block-content")) {
+            btt.closest(".sqs-block-content").style.display = "inline";
+          }
+        });
 
-      const throttle = (callback, time) => {
-        if (throttlePause) return;
+        const throttle = (callback, time) => {
+          if (throttlePause) return;
 
-        throttlePause = true;
-        setTimeout(() => {
-          callback();
-          throttlePause = false;
-        }, time);
-      };
+          throttlePause = true;
+          setTimeout(() => {
+            callback();
+            throttlePause = false;
+          }, time);
+        };
 
-      const checkPos = () => {
-        let pos = document.documentElement.scrollTop,
-          revealHeight = window.innerHeight * 0.19,
-          bttButton = document.querySelector("#wm-back-to-top");
-        if (pos >= revealHeight) {
-          bttButton.classList.add("show");
-        } else {
-          bttButton.classList.remove("show");
-        }
-      };
+        const checkPos = () => {
+          let pos = document.documentElement.scrollTop,
+            revealHeight = window.innerHeight * 0.19,
+            bttButton = document.querySelector("#wm-back-to-top");
+          if (pos >= revealHeight) {
+            bttButton.classList.add("show");
+          } else {
+            bttButton.classList.remove("show");
+          }
+        };
 
-      window.addEventListener("scroll", () => {
-        throttle(checkPos, 150);
-      });
-      window.addEventListener("DOMContentLoaded", checkPos);
-    })();
-  </script>
-</body>
-
+        window.addEventListener("scroll", () => {
+          throttle(checkPos, 150);
+        });
+        window.addEventListener("DOMContentLoaded", checkPos);
+      })();
+    </script>
+  </body>
 </html>
